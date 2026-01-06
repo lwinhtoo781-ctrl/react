@@ -1,17 +1,13 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Register from "./pages/register";
+import SubmitData from "./pages/Submitdata";
 
 export default function App() {
   return (
     <Routes>
-      {/* root path uses Register */}
-      <Route path="/" element={<Register />} />
-
-      {/* explicit path to Register */}
+      <Route path="/" element={<Navigate to="/register" />} />
       <Route path="/register" element={<Register />} />
-
-      {/* optional fallback */}
-      <Route path="*" element={<Navigate to="/register" replace />} />
+      <Route path="/submit-data" element={<SubmitData />} />
     </Routes>
   );
 }
